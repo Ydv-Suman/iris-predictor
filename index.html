@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Project</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🌺 Iris Classification Project</h1>
+        
+        <div class="status" id="status">
+            Ready to load data and train model...
+        </div>
+        
+        <div class="data-info" id="dataInfo" style="display: none;">
+            <h3>📊 Dataset Information</h3>
+            <div id="dataStats"></div>
+        </div>
+        
+        <button onclick="loadDataAndTrain()" id="trainBtn">Load Data & Train Model</button>
+        
+        <div class="training-log" id="trainingLog" style="display: none;">
+            <div id="logContent"></div>
+        </div>
+        
+        <div class="input-section" id="predictionSection" style="display: none;">
+            <h3>🔮 Make a Prediction</h3>
+            <p>Enter the measurements of an iris flower:</p>
+            
+            <div class="feature-grid">
+                <div class="input-group">
+                    <label for="sepalLength">Sepal Length (cm):</label>
+                    <input type="number" id="sepalLength" step="0.1" min="0" max="10" value="5.1">
+                </div>
+                
+                <div class="input-group">
+                    <label for="sepalWidth">Sepal Width (cm):</label>
+                    <input type="number" id="sepalWidth" step="0.1" min="0" max="10" value="3.5">
+                </div>
+                
+                <div class="input-group">
+                    <label for="petalLength">Petal Length (cm):</label>
+                    <input type="number" id="petalLength" step="0.1" min="0" max="10" value="1.4">
+                </div>
+                
+                <div class="input-group">
+                    <label for="petalWidth">Petal Width (cm):</label>
+                    <input type="number" id="petalWidth" step="0.1" min="0" max="10" value="0.2">
+                </div>
+            </div>
+            
+            <button onclick="makePrediction()" id="predictBtn">Predict Species</button>
+            <button onclick="tryRandomExample()">Try Random Example</button>
+            
+            <div id="predictionResult"></div>
+        </div>
+    </div>
+</body>
+</html>
